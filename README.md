@@ -45,8 +45,12 @@ Cara menggunakan proyek ini:
 Cara menggunakan proyek ini:
 
 1.Buka terminal lalu jalankan perintah : `docker-compose up`
+
 2.Jika ingin menjalan kan aplikasi diluar background/dilatar belakang jalankan perintah : `docker-compose up -d`
+
 3.jika ingin mengkonfigurasi file dapat merubah file
+
+
 ```
 version: "1.0"
 
