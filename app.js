@@ -4,11 +4,16 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const mongoose = require("mongoose");
+require("dotenv").config();
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://test:123@cluster0.ctti9m5.mongodb.net/?retryWrites=true&w=majority", {
+const { url } = require("./config/db.confiq");
+
+mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+console.log(url, "monggo db url");
 
 mongoose.connection.on("connected", () => {
   console.log("Connected to mongodb atlas at port 27017");
@@ -44,6 +49,8 @@ app.use("/city", cityRouter);
 app.use(function (req, res, next) {
   next(createError(404));
 });
+
+//porl
 
 // error handler
 app.use(function (err, req, res, next) {
